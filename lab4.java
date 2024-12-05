@@ -32,11 +32,11 @@ public class lab4 {
      */
     private static void searchPatternInFile(String pattern, String filePath) throws IOException {
         Path path = Paths.get(filePath);
-
+        // Is the if statement going to work if the filePath is null?
         if (!Files.exists(path)) {
             throw new FileNotFoundException("File not found: " + filePath);
         }
-
+        // Is a try block really necessary here?
         try (BufferedReader reader = Files.newBufferedReader(path)) {
             String line;
             int lineNumber = 0;
